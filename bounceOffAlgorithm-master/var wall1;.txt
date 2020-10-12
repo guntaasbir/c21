@@ -1,0 +1,67 @@
+var wall1;
+var wall2;
+var wall3;
+var b1;
+var b2;
+var b3;
+var b4;
+var finish;
+
+
+
+
+
+function setup() {
+  createCanvas(1600, 400);
+  wall1 = createSprite(800,200,10000000,10);
+  wall1.shapeColor="red";
+  wall2 = createSprite(800,100,10000000,10);
+    wall2.shapeColor="red";
+  wall3 = createSprite(800,300,10000000,10);
+    wall3.shapeColor="red";
+  b1 = createSprite(10,50,20,10);
+  b1.shapeColor="blue";
+    b2 = createSprite(10,150,20,10);
+  b2.shapeColor="yellow";
+      b3 = createSprite(10,250,20,10);
+  b3.shapeColor="purple";
+        b4 = createSprite(10,350,20,10);
+  b4.shapeColor="brown";
+  finish = createSprite(1600,200,50,100000);
+  finish.shapeColor="pink";
+}
+
+function draw() {
+  background("green");
+  if(keyDown("space")){
+  b1.velocityX=+40;
+   b2.velocityX=+35 ;
+    b3.velocityX=+45;
+        b4.velocityX=+30;
+  }
+  if(b1.isTouching(finish)){
+    b1.X=1600
+   b1.Y=200
+      b1.velocityX=0
+  text("2nd",20,50)
+  }
+    if(b2.isTouching(finish)){
+       b2.X=1600
+   b2.Y=200
+        b2.velocityX=0
+  text("3rd",20,150)
+  }
+    if(b3.isTouching(finish)){
+       b3.X=1600
+   b3.Y=200
+        b3.velocityX=0
+  text("1st",20,250)
+  }
+    if(b4.isTouching(finish)){
+       b4.X=1600
+   b4.Y=200
+  b4.velocityX=0
+  text("4th",20,350)
+  }
+  drawSprites();
+}
